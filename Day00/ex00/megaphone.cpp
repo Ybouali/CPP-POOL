@@ -13,6 +13,7 @@ void megaphone(char **argv)
         }
         std::cout << " ";
     }
+    std::cout << std::endl;
 }
 
 int main(int argc, char **argv)
