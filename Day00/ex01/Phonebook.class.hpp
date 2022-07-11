@@ -3,19 +3,22 @@
 
 
 # define MAX_CONTACT 8
+# define MAX_LEN_GETLINE 255
+
 
 #include <string>
 #include <iostream>
+#include <clocale>
 
 class Contact
 {
     private:
         int index;
-        std::string firstname;
-        std::string lastname;
-        std::string nikename;
-        std::string phonenumber;
-        std::string darkestsecret;
+        char * firstname;
+        char * lastname;
+        char * nikename;
+        char * phonenumber;
+        char * darkestsecret;
 
     public:
         Contact();

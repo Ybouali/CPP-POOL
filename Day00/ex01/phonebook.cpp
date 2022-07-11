@@ -14,9 +14,8 @@ int main()
         {
             ++nContact;
             if (nContact >= MAX_CONTACT)
-                std::cout << "Too many contacts!" << std::endl;
-            else
-                phonebook[nContact].add_contact(nContact);
+                nContact = 0;
+            phonebook[nContact].add_contact(nContact);
         }
         else if (cmd == "SEARCH")
         {
@@ -24,14 +23,8 @@ int main()
             {
                 std::cout << "Please enter a contact number.";
                 if (!std::getline(std::cin, cmd))
-                {
                     std::cout << "You did not enter a number of contact" << std::endl;
-                    break;
-                }
-                
-
             }
-            
         }
         
     }

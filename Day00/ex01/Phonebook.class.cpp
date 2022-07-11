@@ -14,24 +14,49 @@ void Contact::add_contact(int index)
 {
     this->index = index;
 
-    std::cout << "Adding contact number :: " << this->index << std::endl;
+    std::cout << "Adding contact number         :: " << this->index<< std::endl;
 
-    std::cout << "Please enter a first name:: ";
-    std::getline(std::cin, this->firstname);
+    while (1)
+    {
+        std::cout << "Please enter a first name     :: ";
+        std::cin.getline(this->firstname, MAX_LEN_GETLINE);
+        if ((int)strlen(this->firstname) > 0) 
+            break;
+    }
 
-    std::cout << "Please enter a last name:: ";
-    std::getline(std::cin, this->lastname);
+    while (1)
+    {
+        std::cout << "Please enter a last name      :: ";
+        std::cin.getline(this->lastname, MAX_LEN_GETLINE);
+        if ((int)strlen(this->lastname) > 0) 
+            break;
+    }
 
-    std::cout << "Please enter a nike name:: ";
-    std::getline(std::cin, this->nikename);
+    while (1)
+    {
+        std::cout << "Please enter a nike name      :: ";
+        std::cin.getline(this->nikename, MAX_LEN_GETLINE);
+        if ((int)strlen(this->nikename) > 0) 
+            break;
+    }
 
-    std::cout << "Please enter a phone number:: ";
-    std::getline(std::cin, this->phonenumber);
+    while (1)
+    {
+        std::cout << "Please enter a phone number   :: ";
+        std::cin.getline(this->phonenumber, MAX_LEN_GETLINE);
+        if ((int)strlen(this->phonenumber) > 0) 
+            break;
+    }
 
-    std::cout << "Please enter a darkest secret:: ";
-    std::getline(std::cin, this->darkestsecret);
+    while (1)
+    {
+        std::cout << "Please enter a darkest secret :: ";
+        std::cin.getline(this->darkestsecret, MAX_LEN_GETLINE);
+        if ((int)strlen(this->darkestsecret) > 0) 
+            break;
+    }
 
-    std::cout << "Contact number :: " << this->index << "Has ben added !!" << std::endl;
+    std::cout << "Contact with name :: " << this->firstname << " Has been added successfully !!" << std::endl;
 }
 
 void Contact::show_contact()
