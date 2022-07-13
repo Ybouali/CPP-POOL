@@ -7,14 +7,16 @@ class Phonebook
 {
     private:
         int nContact;
+        Contact contacts[MAX_CONTACT];
 
     public:
-        Contact contacts[MAX_CONTACT];
         Phonebook();
         ~Phonebook();
         void set_nContacts();
         int get_nContacts();
         void show_all_info_contacts(Phonebook phonebook);
+        void setContact(int nToAddContact);
+        void getContact(int numberOfContact);
 };
 
 

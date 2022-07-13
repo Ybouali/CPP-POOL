@@ -33,3 +33,14 @@ void Phonebook::show_all_info_contacts(Phonebook phonebook)
     for (int i = 0; i < this->nContact; i++)
         phonebook.contacts[i].show_contact();
 }
+
+void Phonebook::setContact(int nToAddContact)
+{
+    this->contacts[nToAddContact].add_contact(nToAddContact);
+}
+
+void Phonebook::getContact(int numberOfContact)
+{
+    // p.contacts[number].show_contact();
+    this->contacts[numberOfContact].show_contact();
+}

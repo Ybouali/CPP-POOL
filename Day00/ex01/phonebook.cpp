@@ -10,6 +10,13 @@ int is_str_of_numbers(std::string str) {
     return 0;
 }
 
+void ft_header()
+{
+    std::cout << "_____________________________________________" << std::endl;
+    std::cout << "|     index|first name| last name|  nickname|" << std::endl;
+    std::cout << "---------------------------------------------" << std::endl;
+}
+
 int main()
 {
     Phonebook p;
@@ -26,7 +33,7 @@ int main()
             ++nToAddContact;
             if (nToAddContact >= MAX_CONTACT)
                 nToAddContact = 0;
-            p.contacts[nToAddContact].add_contact(nToAddContact);
+            p.setContact(nToAddContact);
             p.set_nContacts();
         }
         else if (cmd == "SEARCH")
@@ -37,7 +44,12 @@ int main()
                 std::getline(std::cin, n);
                 if (n == "EXIT")
                     exit(0);
-                if (!is_str_of_numbers(n))
+                if (n.empty())
+                {
+                    ft_header();   
+                    p.show_all_info_contacts(p);
+                }
+                else if (!is_str_of_numbers(n))
                 {
                     int number = atoi(n.c_str());
                     if (number < 0 || number > 7)
@@ -48,11 +60,8 @@ int main()
                             std::cout << "\033[0;31mThere is no contact with number :: " << number << "\033[0m" << std::endl;
                         else 
                         {
-                            std::cout << "_____________________________________________" << std::endl;
-                            std::cout << "|     index|first name| last name|  nickname|" << std::endl;
-                            std::cout << "---------------------------------------------" << std::endl;
-                            // p.contacts[number].show_contact();
-                            p.show_all_info_contacts(p);
+                            ft_header();
+                            p.getContact(number);
                             break;
                         }
                             
