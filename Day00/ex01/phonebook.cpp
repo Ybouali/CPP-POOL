@@ -40,16 +40,24 @@ int main()
         {
             while (1)
             {
+                if (p.get_nContacts() == 0)
+                {
+                    std::cout << "\033[1;31mThere is no contact, Please ADD some contacts !!\033[0m" << std::endl;
+                    break;
+                }
                 std::cout << "\033[0;33mPlease enter a contact number. :: \033[0m";
                 std::getline(std::cin, n);
                 if (n == "EXIT")
                     exit(0);
                 if (n.empty())
                 {
-                    ft_header();   
+                    ft_header();
                     p.show_all_info_contacts(p);
+                    break;
                 }
-                else if (!is_str_of_numbers(n))
+                else if (is_str_of_numbers(n))
+                    std::cout << "\033[0;31mPlease enter a number bteween 0 && 7\033[0m" << std::endl;
+                else
                 {
                     int number = atoi(n.c_str());
                     if (number < 0 || number > 7)

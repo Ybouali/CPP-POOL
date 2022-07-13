@@ -13,7 +13,6 @@ Contact::~Contact()
 void Contact::add_contact(int index)
 {
     this->index = index;
-
     std::cout << "Adding contact number         :: " << this->index<< std::endl;
 
     while (1)
@@ -44,7 +43,9 @@ void Contact::add_contact(int index)
     {
         std::cout << "\033[1;34mPlease enter a phone number   :: \033[0m";
         std::getline(std::cin ,this->phonenumber);
-        if (!this->phonenumber.empty()) 
+        if (!this->phonenumber.empty() && is_str_of_numbers(this->phonenumber))
+            std::cout << "\033[0;31mPhone number cannot contain a character !!\033[0m" << std::endl;
+        else if (!this->phonenumber.empty()) 
             break;
     }
 
@@ -56,7 +57,7 @@ void Contact::add_contact(int index)
             break;
     }
 
-    std::cout << "Contact with name :: " << "[" << this->firstname << "]" << " Has been added successfully !!" << std::endl;
+    std::cout << "\033[1;32mContact with name :: " << "[" << this->firstname << "]" << " Has been added successfully !!\033[0m" << std::endl;
 }
 
 void Contact::show_str_with_rules(std::string str)

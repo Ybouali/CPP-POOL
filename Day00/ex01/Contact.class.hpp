@@ -3,8 +3,6 @@
 
 
 # define MAX_CONTACT 8
-# define MAX_LEN_GETLINE 255
-
 
 #include <string>
 #include <iostream>

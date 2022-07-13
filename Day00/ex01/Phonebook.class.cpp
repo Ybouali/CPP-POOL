@@ -2,6 +2,7 @@
 
 Phonebook::Phonebook()
 {
+    this->nContact = 0;
     return ;
 }
 

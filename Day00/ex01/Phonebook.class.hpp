@@ -3,6 +3,8 @@
 
 #include "./Contact.class.hpp"
 
+int is_str_of_numbers(std::string str);
+
 class Phonebook
 {
     private:
