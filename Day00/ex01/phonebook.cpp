@@ -49,8 +49,9 @@ int main()
                         {
                             std::cout << "_____________________________________________" << std::endl;
                             std::cout << "|     index|first name| last name|  nickname|" << std::endl;
-                            std::cout << "_____________________________________________" << std::endl;
-                            phonebook[number].show_contact();
+                            std::cout << "---------------------------------------------" << std::endl;
+                            // phonebook[number].show_contact();
+                            phonebook[number].show_all_info_contacts(nContact, phonebook);
                             break;
                         }
                             

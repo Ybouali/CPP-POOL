@@ -28,6 +28,7 @@ class Contact
         void show_all_info_contact();
         void show_str_with_rules(std::string str);
         void show_contact();
+        void show_all_info_contacts(int nContact, Contact *phonebook);
 };
 
 #endif

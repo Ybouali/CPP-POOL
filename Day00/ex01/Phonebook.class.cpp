@@ -86,3 +86,9 @@ void Contact::show_all_info_contact()
     std::cout << "PHONE NUMBER   :: " << this->phonenumber << std::endl;
     std::cout << "DARKEST SECRET :: " << this->darkestsecret << std::endl;
 }
+
+void Contact::show_all_info_contacts(int nContact, Contact *phonebook)
+{
+    for (int i = 0; i < nContact + 1; i++)
+        phonebook[i].show_contact();
+}
