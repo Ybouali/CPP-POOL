@@ -1,6 +1,7 @@
 NAME = phonebook
 
-SRCS = ./Phonebook.class.cpp \
+SRCS = ./Contact.class.cpp \
+	   ./Phonebook.class.cpp \
 	   ./phonebook.cpp \
 
 OBJS	= 	$(SRCS:.cpp=.o)

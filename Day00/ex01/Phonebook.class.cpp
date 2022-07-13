@@ -1,94 +1,35 @@
 #include "./Phonebook.class.hpp"
 
-Contact::Contact()
+Phonebook::Phonebook()
 {
-    return;
+    return ;
 }
 
-Contact::~Contact()
+Phonebook::~Phonebook()
 {
-    return;
+    return ;
 }
 
-void Contact::add_contact(int index)
+int Phonebook::get_nContacts()
 {
-    this->index = index;
+    return this->nContact;
+}
 
-    std::cout << "Adding contact number         :: " << this->index<< std::endl;
+void Phonebook::set_nContacts()
+{
+    int i = -1;
 
-    while (1)
+    while (++i < MAX_CONTACT)
     {
-        std::cout << "\033[1;34mPlease enter a first name     :: \033[0m";
-        std::getline(std::cin, this->firstname);
-        if (!this->firstname.empty())
+        if (this->contacts[i].getName().empty())
             break;
     }
-
-    while (1)
-    {
-        std::cout << "\033[1;34mPlease enter a last name      :: \033[0m";
-        std::getline(std::cin, this->lastname);
-        if (!this->lastname.empty()) 
-            break;
-    }
-
-    while (1)
-    {
-        std::cout << "\033[1;34mPlease enter a nike name      :: \033[0m";
-        std::getline(std::cin, this->nikename);
-        if (!this->nikename.empty()) 
-            break;
-    }
-
-    while (1)
-    {
-        std::cout << "\033[1;34mPlease enter a phone number   :: \033[0m";
-        std::getline(std::cin ,this->phonenumber);
-        if (!this->phonenumber.empty()) 
-            break;
-    }
-
-    while (1)
-    {
-        std::cout << "\033[1;34mPlease enter a darkest secret :: \033[0m";
-        std::getline(std::cin, this->darkestsecret);
-        if (!this->darkestsecret.empty()) 
-            break;
-    }
-
-    std::cout << "Contact with name :: " << "[" << this->firstname << "]" << " Has been added successfully !!" << std::endl;
+    this->nContact = i;
+    return ;
 }
 
-void Contact::show_str_with_rules(std::string str)
+void Phonebook::show_all_info_contacts(Phonebook phonebook)
 {
-    if (str.length() <= 10)
-		std::cout << std::setw(10) << str << "|";
-	else
-		std::cout << str.substr(0, 9) << ".|";
-}
-
-void Contact::show_contact()
-{
-    std::cout << "|" << "         " << this->index << "|";
-	show_str_with_rules(this->firstname);
-	show_str_with_rules(this->lastname);
-	show_str_with_rules(this->nikename);
-	std::cout << std::endl;
-    std::cout << "_____________________________________________" << std::endl;
-}
-
-void Contact::show_all_info_contact()
-{
-    std::cout << "INDEX          :: " << this->index << std::endl;
-    std::cout << "FIRST NAME     :: " << this->firstname << std::endl;
-    std::cout << "LAST NAME      :: " << this->lastname << std::endl;
-    std::cout << "NICK NAME      :: " << this->nikename << std::endl;
-    std::cout << "PHONE NUMBER   :: " << this->phonenumber << std::endl;
-    std::cout << "DARKEST SECRET :: " << this->darkestsecret << std::endl;
-}
-
-void Contact::show_all_info_contacts(int nContact, Contact *phonebook)
-{
-    for (int i = 0; i < nContact + 1; i++)
-        phonebook[i].show_contact();
+    for (int i = 0; i < this->nContact; i++)
+        phonebook.contacts[i].show_contact();
 }

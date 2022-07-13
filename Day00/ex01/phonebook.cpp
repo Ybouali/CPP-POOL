@@ -12,10 +12,10 @@ int is_str_of_numbers(std::string str) {
 
 int main()
 {
-    Contact phonebook[MAX_CONTACT];
+    Phonebook p;
     std::string cmd;
-    int nContact = -1;
     std::string n;
+    int nToAddContact = -1;
     while (1)
     {
         std::cout << "\033[0;33m(ADD, SEARCH, EXIT): \033[0m";
@@ -23,10 +23,11 @@ int main()
             break;
         if (cmd == "ADD")
         {
-            ++nContact;
-            if (nContact >= MAX_CONTACT)
-                nContact = 0;
-            phonebook[nContact].add_contact(nContact);
+            ++nToAddContact;
+            if (nToAddContact >= MAX_CONTACT)
+                nToAddContact = 0;
+            p.contacts[nToAddContact].add_contact(nToAddContact);
+            p.set_nContacts();
         }
         else if (cmd == "SEARCH")
         {
@@ -43,15 +44,15 @@ int main()
                         std::cout << "\033[0;31mPlease enter a number bteween 0 && 7\033[0m" << std::endl;
                     else
                     {
-                        if (number > nContact)
+                        if (number > p.get_nContacts())
                             std::cout << "\033[0;31mThere is no contact with number :: " << number << "\033[0m" << std::endl;
                         else 
                         {
                             std::cout << "_____________________________________________" << std::endl;
                             std::cout << "|     index|first name| last name|  nickname|" << std::endl;
                             std::cout << "---------------------------------------------" << std::endl;
-                            // phonebook[number].show_contact();
-                            phonebook[number].show_all_info_contacts(nContact, phonebook);
+                            // p.contacts[number].show_contact();
+                            p.show_all_info_contacts(p);
                             break;
                         }
                             
