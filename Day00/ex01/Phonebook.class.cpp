@@ -19,44 +19,44 @@ void Contact::add_contact(int index)
     while (1)
     {
         std::cout << "Please enter a first name     :: ";
-        std::cin.getline(this->firstname, MAX_LEN_GETLINE);
-        if ((int)strlen(this->firstname) > 0) 
+        std::getline(std::cin, this->firstname);
+        if (!this->firstname.empty())
             break;
     }
 
     while (1)
     {
         std::cout << "Please enter a last name      :: ";
-        std::cin.getline(this->lastname, MAX_LEN_GETLINE);
-        if ((int)strlen(this->lastname) > 0) 
+        std::getline(std::cin, this->lastname);
+        if (!this->lastname.empty()) 
             break;
     }
 
     while (1)
     {
         std::cout << "Please enter a nike name      :: ";
-        std::cin.getline(this->nikename, MAX_LEN_GETLINE);
-        if ((int)strlen(this->nikename) > 0) 
+        std::getline(std::cin, this->nikename);
+        if (!this->nikename.empty()) 
             break;
     }
 
     while (1)
     {
         std::cout << "Please enter a phone number   :: ";
-        std::cin.getline(this->phonenumber, MAX_LEN_GETLINE);
-        if ((int)strlen(this->phonenumber) > 0) 
+        std::getline(std::cin ,this->phonenumber);
+        if (!this->phonenumber.empty()) 
             break;
     }
 
     while (1)
     {
         std::cout << "Please enter a darkest secret :: ";
-        std::cin.getline(this->darkestsecret, MAX_LEN_GETLINE);
-        if ((int)strlen(this->darkestsecret) > 0) 
+        std::getline(std::cin, this->darkestsecret);
+        if (!this->darkestsecret.empty()) 
             break;
     }
 
-    std::cout << "Contact with name :: " << this->firstname << " Has been added successfully !!" << std::endl;
+    std::cout << "Contact with name :: " << "[" << this->firstname << "]" << " Has been added successfully !!" << std::endl;
 }
 
 void Contact::show_contact()

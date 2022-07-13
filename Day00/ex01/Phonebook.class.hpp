@@ -14,11 +14,11 @@ class Contact
 {
     private:
         int index;
-        char * firstname;
-        char * lastname;
-        char * nikename;
-        char * phonenumber;
-        char * darkestsecret;
+        std::string firstname;
+        std::string lastname;
+        std::string nikename;
+        std::string phonenumber;
+        std::string darkestsecret;
 
     public:
         Contact();
