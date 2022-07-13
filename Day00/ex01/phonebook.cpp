@@ -18,7 +18,7 @@ int main()
     std::string n;
     while (1)
     {
-        std::cout << "(ADD, SEARCH, EXIT): ";
+        std::cout << "\033[0;33m(ADD, SEARCH, EXIT): \033[0m";
         if (!std::getline(std::cin, cmd))
             break;
         if (cmd == "ADD")
@@ -32,22 +32,37 @@ int main()
         {
             while (1)
             {
-                std::cout << "Please enter a contact number. :: ";
+                std::cout << "\033[0;33mPlease enter a contact number. :: \033[0m";
                 std::getline(std::cin, n);
+                if (n == "EXIT")
+                    exit(0);
                 if (!is_str_of_numbers(n))
                 {
                     int number = atoi(n.c_str());
                     if (number < 0 || number > 7)
-                        std::cout << "Please enter a number bteween 0 && 7" << std::endl;
+                        std::cout << "\033[0;31mPlease enter a number bteween 0 && 7\033[0m" << std::endl;
                     else
-                        phonebook[number].show_contact();
+                    {
+                        if (number > nContact)
+                            std::cout << "\033[0;31mThere is no contact with number :: " << number << "\033[0m" << std::endl;
+                        else 
+                        {
+                            std::cout << "_____________________________________________" << std::endl;
+                            std::cout << "|     index|first name| last name|  nickname|" << std::endl;
+                            std::cout << "_____________________________________________" << std::endl;
+                            phonebook[number].show_contact();
+                            break;
+                        }
+                            
+                    }
                 }
             }
 
         }
         else if (cmd == "EXIT")
             exit(0);
-        
+        else
+            std::cout << "\033[0;31m[" << cmd << "] NOT FOUND\033[0m" << std::endl;
     }
     
 }
