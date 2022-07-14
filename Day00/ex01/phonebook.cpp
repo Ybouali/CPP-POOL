@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   phonebook.cpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ybouali <ybouali@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/07/14 14:00:01 by ybouali           #+#    #+#             */
+/*   Updated: 2022/07/14 17:20:58 by ybouali          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "./Phonebook.class.hpp"
 
 int is_str_of_numbers(std::string str) {
@@ -25,7 +37,7 @@ int main()
     int nToAddContact = -1;
     while (1)
     {
-        std::cout << "\033[0;33m(ADD, SEARCH, EXIT): \033[0m";
+        std::cout << "\033[1;33m(ADD, SEARCH, EXIT): \033[0m";
         if (!std::getline(std::cin, cmd))
             break;
         if (cmd == "ADD")
@@ -38,45 +50,39 @@ int main()
         }
         else if (cmd == "SEARCH")
         {
-            while (1)
+            if (p.get_nContacts() == 0)
+                std::cout << "\033[1;31mThere is no contact, Please ADD some contacts !!\033[0m" << std::endl;
+            else
             {
-                if (p.get_nContacts() == 0)
+                ft_header();
+                p.show_all_info_contacts(p);
+                while (1)
                 {
-                    std::cout << "\033[1;31mThere is no contact, Please ADD some contacts !!\033[0m" << std::endl;
-                    break;
-                }
-                std::cout << "\033[0;33mPlease enter a contact number. :: \033[0m";
-                std::getline(std::cin, n);
-                if (n == "EXIT")
-                    exit(0);
-                if (n.empty())
-                {
-                    ft_header();
-                    p.show_all_info_contacts(p);
-                    break;
-                }
-                else if (is_str_of_numbers(n))
-                    std::cout << "\033[0;31mPlease enter a number bteween 0 && 7\033[0m" << std::endl;
-                else
-                {
-                    int number = atoi(n.c_str());
-                    if (number < 0 || number > 7)
-                        std::cout << "\033[0;31mPlease enter a number bteween 0 && 7\033[0m" << std::endl;
-                    else
+                    std::cout << "\033[1;33mPlease enter a contact number. :: \033[0m";
+                    std::getline(std::cin, n);
+                    if (n == "EXIT")
+                        exit(0);
+                    if (!n.empty() && is_str_of_numbers(n))
+                        std::cout << "\033[1;31mPlease enter a number bteween 0 && 7\033[0m" << std::endl;
+                    else if (!n.empty())
                     {
-                        if (number > p.get_nContacts())
-                            std::cout << "\033[0;31mThere is no contact with number :: " << number << "\033[0m" << std::endl;
-                        else 
+                        int number = atoi(n.c_str());
+                        if (number < 0 || number > 7)
+                            std::cout << "\033[1;31mPlease enter a number bteween 0 && 7\033[0m" << std::endl;
+                        else
                         {
-                            ft_header();
-                            p.getContact(number);
-                            break;
+                            if (number > nToAddContact)
+                                std::cout << "\033[1;31mThere is no contact with number :: [" << number << "]\033[0m" << std::endl;
+                            else 
+                            {
+                                ft_header();
+                                p.getContact(number);
+                                break;
+                            }
                         }
-                            
                     }
                 }
             }
-
         }
         else if (cmd == "EXIT")
             exit(0);
