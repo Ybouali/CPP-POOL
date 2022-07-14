@@ -25,6 +25,7 @@ Account::~Account()
     std::cout << "index:" << this->_accountIndex << ";";
     std::cout << "amount:" << this->_amount << ";";
     std::cout << "closed" << std::endl;
+    // return ;
 }
 
 Account::Account()
@@ -84,6 +85,7 @@ bool Account::makeWithdrawal( int withdrawal )
     }
     std::cout << withdrawal << ";";
     this->_amount -= withdrawal;
+    std::cout << "amount:" << this->_amount << ";";
     this->_nbWithdrawals++;
     std::cout << "nb_withdrawals:" << this->_nbWithdrawals << std::endl;
     _totalAmount -= withdrawal;
@@ -98,7 +100,6 @@ void Account::displayAccountsInfos()
     std::cout << "total:" << _totalAmount << ";";
     std::cout << "deposits:" << _totalNbDeposits << ";";
     std::cout << "withdrawals:" << _totalNbWithdrawals << std::endl;
-    return ;
 }
 
 void Account::displayStatus() const
@@ -121,6 +122,5 @@ void Account::_displayTimestamp()
 
 	strftime (buffer, 19, "[%Y%m%d_%H%M%S] ", timeinfo);
 	std::cout << buffer;
-	return ;
 }
 
