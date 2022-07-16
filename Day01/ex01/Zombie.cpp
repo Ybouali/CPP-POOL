@@ -1,11 +1,5 @@
 #include "./Zombie.hpp"
 
-Zombie::Zombie(std::string name)
-{
-    this->name = name;
-    return ;
-}
-
 Zombie::Zombie()
 {
     return ;
