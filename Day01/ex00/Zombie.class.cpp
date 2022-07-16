@@ -6,8 +6,14 @@ Zombie::Zombie(std::string name)
     return ;
 }
 
+Zombie::Zombie()
+{
+    return ;
+}
+
 Zombie::~Zombie()
 {
+    std::cout << "Zombie destructor" << std::endl;
     return ;
 }
 
