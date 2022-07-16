@@ -1,6 +1,7 @@
-NAME = megaphone
+NAME = zombie
 
-SRCS = ./megaphone.cpp
+SRCS = ./Zombie.class.cpp \
+	   ./main.cpp
 
 OBJS	= 	$(SRCS:.cpp=.o)
 

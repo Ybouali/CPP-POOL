@@ -9,8 +9,11 @@ class Zombie
     private:
         std::string name;
     public:
-        Zombie(/* args */);
+        Zombie();
         ~Zombie();
+        void setName(std::string name);
+        std::string getName();
+        void announce(void);
 };
 
 
