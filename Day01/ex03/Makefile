@@ -1,6 +1,8 @@
-NAME = strPtrRef
+NAME = violence
 
-SRCS = ./main.cpp
+SRCS = ./main.cpp \
+		./Weapon.cpp \
+	   ./HumanA.cpp
 
 OBJS	= 	$(SRCS:.cpp=.o)
 

@@ -5,6 +5,12 @@ Weapon::Weapon()
     return ;
 }
 
+Weapon::Weapon(std::string type)
+{
+    this->type = type;
+    return ;
+}
+
 Weapon::~Weapon()
 {
     return ;
@@ -12,10 +18,12 @@ Weapon::~Weapon()
 
 std::string Weapon::getType()
 {
-    return this->typeWeapon;
+    return this->type;
 }
 
 void Weapon::setType(std::string type)
 {
-    this->typeWeapon = type;
+    
+    this->type = type;
+    return ;
 }
