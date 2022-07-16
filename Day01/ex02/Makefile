@@ -1,4 +1,4 @@
-NAME = strPtr
+NAME = strPtrRef
 
 SRCS = ./main.cpp
 
@@ -13,10 +13,10 @@ MAKE = make
 all: $(NAME)
 
 $(NAME): $(OBJS)
-		c++ ${FLAGS} $(OBJS) -o ${NAME}
+		@c++ ${FLAGS} $(OBJS) -o ${NAME}
 
 .cpp.o: $(SRCS)
-	c++ ${FLAGS} -c $< -o $@
+	@c++ ${FLAGS} -c $< -o $@
 
 clean:
 	@$(RM) $(OBJS)
