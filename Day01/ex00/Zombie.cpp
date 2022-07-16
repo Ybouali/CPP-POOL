@@ -1,4 +1,4 @@
-#include "./Zombie.class.hpp"
+#include "./Zombie.hpp"
 
 Zombie::Zombie(std::string name)
 {
@@ -13,7 +13,7 @@ Zombie::Zombie()
 
 Zombie::~Zombie()
 {
-    std::cout << "Zombie destructor" << std::endl;
+    std::cout << this->name << ": Zombie destructor" << std::endl;
     return ;
 }
 

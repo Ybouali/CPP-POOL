@@ -1,4 +1,4 @@
-#include "./Zombie.class.hpp"
+#include "./Zombie.hpp"
 
 std::string generate_random_string(void)
 {
@@ -40,7 +40,7 @@ int main(void)
 
     Zombie zombie1[1];
 
-    zombie1->setName("zombie1");
+    zombie1->setName("NO_ONE");
     zombie1->announce();
 
 

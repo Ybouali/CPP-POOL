@@ -1,7 +1,8 @@
 NAME = zombie
 
 SRCS = ./Zombie.cpp \
-	   ./main.cpp
+	   ./main.cpp \
+	   ./zombieHorde.cpp
 
 OBJS	= 	$(SRCS:.cpp=.o)
 
