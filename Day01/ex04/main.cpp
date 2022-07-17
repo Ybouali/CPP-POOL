@@ -4,7 +4,7 @@ void print(std::string filename, std::string s1, std::string s2)
 {
     (void)s1;
     (void)s2;
-    std::string ch;
+    std::string line;
 
     std::fstream file_in;
 
@@ -15,10 +15,10 @@ void print(std::string filename, std::string s1, std::string s2)
     {
         while (1)
         {
-            std::getline(file_in, ch);
+            std::getline(file_in, line);
             if (file_in.eof())
                 break;
-            std::cout << ch << std::endl;
+            std::cout << line << std::endl;
         }
         file_in.close();
     }
@@ -31,10 +31,10 @@ int main(int argc, char const *argv[])
     (void)argv;
     (void)argc;
 
-    // if (argc != 4)
-    //     std::cout << "ERROR: Invalid number of arguments !!" << std::endl;
-    // else
-    //     print(argv[1], argv[2], argv[3]);
-    std::cout << name_for_new_file() << std::endl;
+    if (argc != 4)
+        std::cout << "ERROR: Invalid number of arguments !!" << std::endl;
+    else
+        print(argv[1], argv[2], argv[3]);
+    // std::cout << name_for_new_file() << std::endl;
     return 0;
 }
