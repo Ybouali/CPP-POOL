@@ -1,5 +1,22 @@
 #include "./sed_is_for_losers.hpp"
 
+
+std::string replace_s1_s2(std::string line, std::string  s1, std::string  s2)
+{
+    std::string result;
+    std::size_t start;
+
+    (void )s2;
+    start = line.find(s1);
+    if (start != std::string::npos)
+    {
+        result = line.substr(start, s1.length() - start);
+        std::cout << result << " " << start << std::endl;
+    }
+    
+    return line;
+}
+
 void print(std::string filename, std::string s1, std::string s2)
 {
     (void)s1;
@@ -15,18 +32,19 @@ void print(std::string filename, std::string s1, std::string s2)
     else
     {
         // create the new file 
-        // name_for_new_file("the name of the new file")
-        file_out.open(filename.c_str(), std::ios::out);
+        file_out.open(name_for_new_file("new_file").c_str(), std::ios::out);
         if (!file_out)
             std::cout << "ERROR: Could not create the new file!" << std::endl;
         {
             while (1)
             {
                 std::getline(file_in, line);
+                // std::cout << line << std::endl;
+                // working on replace s1 with s2
+                line = replace_s1_s2(line, s1, s2);
+                file_out << line << std::endl;
                 if (file_in.eof())
                     break;
-                std::cout << line << std::endl;
-                // working on replace s1 with s2
             }
             file_out.close();
         }
