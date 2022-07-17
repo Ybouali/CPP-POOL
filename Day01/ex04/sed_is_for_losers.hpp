@@ -4,6 +4,6 @@
 #include <iostream>
 #include <fstream>
 
-std::string name_for_new_file(void);
+std::string name_for_new_file(std::string filename_new);
 
 #endif
