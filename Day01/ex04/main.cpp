@@ -3,17 +3,24 @@
 
 std::string replace_s1_s2(std::string line, std::string  s1, std::string  s2)
 {
-    std::string result;
+    // std::string result;
     std::size_t start;
+    // std::size_t start_old = 0;
 
     (void )s2;
     start = line.find(s1);
     if (start != std::string::npos)
     {
-        result = line.substr(start, s1.length() - start);
-        std::cout << result << " " << start << std::endl;
+        while (1)
+        {
+            line.erase(start, s1.length());
+            line.insert(start, s2.c_str(), s2.length());
+            start += s2.length();
+            start = line.find(s1, start + 1);
+            if (start == std::string::npos)
+                break;
+        }
     }
-    
     return line;
 }
 
