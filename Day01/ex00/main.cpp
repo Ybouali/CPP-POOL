@@ -11,17 +11,6 @@ std::string generate_random_string(void)
     return result;
 }
 
-void randomChump(std::string name)
-{
-    Zombie *zombie;
-
-    zombie = new Zombie(name);
-    if (!zombie) return ;
-
-    zombie->announce();
-    delete zombie;
-}
-
 Zombie *newZombie(std::string name)
 {
     if (name.empty())
@@ -34,6 +23,18 @@ Zombie *newZombie(std::string name)
         return nullptr;
     return zombie;
 }
+
+void randomChump(std::string name)
+{
+    Zombie *zombie;
+
+    zombie = newZombie(name);
+    if (!zombie) return ;
+
+    zombie->announce();
+    delete zombie;
+}
+
 
 int main(void)
 {

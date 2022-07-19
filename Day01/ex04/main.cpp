@@ -3,11 +3,8 @@
 
 std::string replace_s1_s2(std::string line, std::string  s1, std::string  s2)
 {
-    // std::string result;
     std::size_t start;
-    // std::size_t start_old = 0;
-
-    (void )s2;
+    
     start = line.find(s1);
     if (start != std::string::npos)
     {
@@ -24,10 +21,8 @@ std::string replace_s1_s2(std::string line, std::string  s1, std::string  s2)
     return line;
 }
 
-void print(std::string filename, std::string s1, std::string s2)
+void ft_replace(std::string filename, std::string s1, std::string s2)
 {
-    (void)s1;
-    (void)s2;
     std::string line;
 
     std::fstream file_in;
@@ -46,8 +41,6 @@ void print(std::string filename, std::string s1, std::string s2)
             while (1)
             {
                 std::getline(file_in, line);
-                // std::cout << line << std::endl;
-                // working on replace s1 with s2
                 line = replace_s1_s2(line, s1, s2);
                 file_out << line << std::endl;
                 if (file_in.eof())
@@ -69,7 +62,6 @@ int main(int argc, char const *argv[])
     if (argc != 4)
         std::cout << "ERROR: Invalid number of arguments !!" << std::endl;
     else
-        print(argv[1], argv[2], argv[3]);
-    // std::cout << name_for_new_file() << std::endl;
+        ft_replace(argv[1], argv[2], argv[3]);
     return 0;
 }
