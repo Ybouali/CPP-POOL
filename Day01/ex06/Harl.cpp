@@ -40,14 +40,32 @@ void Harl::complain(std::string level)
     typedef void(Harl::*f)(void);
     f flevel[4] = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
 
-    for (int i = 0; i < 4; i++)
+    int i = -1;
+    while (++i < 4)
     {
         if (level  == level_s[i])
         {
             (this->*flevel[i])();
-            return ;
+            break;
         }
     }
-    std::cout << level << " IS NOT A LEVEL" << std::endl;
+    if (i == 4)
+    {
+        std::cout << level << " IS NOT A LEVEL" << std::endl;
+        return ;
+    }
+    switch (i)
+    {
+    case 0:
+        this->debug();
+    case 1:
+        this->info();
+    case 2:
+        this->warning();
+    case 3:
+        this->error();
+    default:
+        break;
+    }
     return ;
 }
