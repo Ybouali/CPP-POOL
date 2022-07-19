@@ -11,7 +11,7 @@ std::string generate_random_string(void)
     return result;
 }
 
-void randomChimp(std::string name)
+void randomChump(std::string name)
 {
     Zombie *zombie;
 
@@ -51,6 +51,6 @@ int main(void)
     zombie2->announce();
     delete zombie2;
 
-    randomChimp(generate_random_string());
+    randomChump(generate_random_string());
     return 0;
 }

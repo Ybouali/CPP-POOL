@@ -1,7 +1,7 @@
 #ifndef ZOMBIE_HPP
 #define ZOMBIE_HPP
 
-#define LEN_NAME_ZOMBIE 5
+#define LEN_NAME_ZOMBIE 6
 
 #include <iostream>
 #include <string>
