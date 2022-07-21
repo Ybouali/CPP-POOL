@@ -1,4 +1,4 @@
-NAME = zombie
+NAME = Fixed
 
 SRCS = ./Fixed.cpp \
 	   ./main.cpp
