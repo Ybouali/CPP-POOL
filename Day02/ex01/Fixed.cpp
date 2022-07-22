@@ -9,6 +9,13 @@ Fixed::Fixed(void)
     return ;
 }
 
+Fixed::Fixed(Fixed const &other)
+{
+    std::cout << "Copy constructor called" << std::endl;
+    *this = other;
+    return ;
+}
+
 Fixed::Fixed(int const n)
 {
     std::cout << "Int constructor called" << std::endl;
@@ -35,16 +42,9 @@ Fixed::~Fixed()
     return ;
 }
 
-Fixed::Fixed(Fixed const &other)
-{
-    std::cout << "Copy constructor called" << std::endl;
-    *this = other;
-    return ;
-}
 
 int Fixed::getRawBits(void) const
 {
-    std::cout << "getRawBits member function called" << std::endl;
     return this->raw;
 }
 

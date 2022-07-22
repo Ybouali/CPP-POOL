@@ -11,10 +11,11 @@ class Fixed
         static const int    bits;
     public:
         Fixed(void);
+        Fixed(Fixed const &other);
         Fixed(int const n);
         Fixed(float const n);
         ~Fixed();
-        Fixed(Fixed const &other);
+
         Fixed&  operator=(Fixed const &other);
         int     getRawBits(void) const;
         void    setRawBits(int  const raw);
