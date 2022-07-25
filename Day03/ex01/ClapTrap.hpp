@@ -14,7 +14,7 @@ class ClapTrap
         ClapTrap(std::string name);
         ClapTrap(void);
         ~ClapTrap();
-        ClapTrap(ClapTrap & other);
+        ClapTrap(ClapTrap& other);
         ClapTrap& operator=(ClapTrap& other);
 
         void            setName(std::string name);
