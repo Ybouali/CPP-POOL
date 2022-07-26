@@ -3,15 +3,17 @@
 int main()
 {
     
-    ClapTrap	hero("Hero");
-	ClapTrap	me;
+    ClapTrap	player1("Player 1");
+	ClapTrap	player2;
 
-	hero.attack("enemy 1");
-	me.attack("the car");
-	hero.beRepaired(100);
-	hero.takeDamage(10000);
-	me.attack("enemy 2");
-	me.beRepaired(99);
+	player1.attack("enemy 1");
+	// player2.setHitPoints(0);
+	// player2.setEnergyPoints(0);
+	player2.attack("the train");
+	player1.beRepaired(100);
+	player1.takeDamage(10000);
+	player2.attack("enemy 1");
+	player2.beRepaired(99);
 
     return 0;
 }

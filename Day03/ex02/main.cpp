@@ -4,24 +4,24 @@ int main()
 {
 	std::cout << std::endl << "******* ScavTrap *****************" << std::endl << std::endl;
 	
-    ScavTrap Hero("Player 1");
+    ScavTrap player1("Player 1");
 
-	Hero.attack("Player 2");
-	Hero.beRepaired(10);
-	Hero.guardGate();
-	Hero.takeDamage(66666);
-	Hero.attack("Player 2");
-	Hero.guardGate();
+	player1.attack("Player 2");
+	player1.beRepaired(10);
+	player1.guardGate();
+	player1.takeDamage(66666);
+	player1.attack("Player 2");
+	player1.guardGate();
 
 	std::cout << std::endl << "******* FragTrap *****************" << std::endl << std::endl;
 
-	FragTrap Enemy("Player 1");
+	FragTrap Player2("Player 1");
 
-	Enemy.attack("Player 2");
-	Enemy.beRepaired(10);
-	Enemy.hightFivesGuys();
-	Enemy.takeDamage(2020202);
-	Enemy.attack("Player 2");
-	Enemy.hightFivesGuys();
+	Player2.attack("Player 2");
+	Player2.beRepaired(10);
+	Player2.hightFivesGuys();
+	Player2.takeDamage(2020202);
+	Player2.attack("Player 2");
+	Player2.hightFivesGuys();
     return 0;
 }

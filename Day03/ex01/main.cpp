@@ -3,15 +3,15 @@
 int main()
 {
     
-    ScavTrap	hero("Player 1");
-	ScavTrap	me;
+    ScavTrap	player1("Player 1");
+	ScavTrap	player2;
 
-	hero.attack("Player 2");
-	me.attack("the train");
-	hero.beRepaired(100);
-	hero.takeDamage(1010101010);
-	me.attack("Player 2");
-	me.beRepaired(202);
+	player1.attack("Player 2");
+	player2.attack("the train");
+	player1.beRepaired(100);
+	player1.takeDamage(1010101010);
+	player2.attack("Player 2");
+	player2.beRepaired(202);
 
     return 0;
 }
