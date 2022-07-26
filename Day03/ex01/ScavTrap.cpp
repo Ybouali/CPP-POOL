@@ -41,12 +41,26 @@ ScavTrap&	ScavTrap::operator=(ScavTrap& other)
 
 void ScavTrap::attack(const std::string& target)
 {
-	this->attack(target);
-	return ;
+	if (!this->getHitPoints())
+	{
+		std::cout << "ScavTrap " << this->getName() << " He's deid!" << std::endl;
+		return ;
+	}
+	if (this->getEnergyPoints() > 0)
+	{
+		std::cout << "ScavTrap " << this->getName() << " attacks " << target << ", causing " << this->getAttackDamage() << " points of damage!" << std::endl;
+		this->Energy_points--;
+	}
+	else
+		std::cout << "ScavTrap " << this->getName() << " does not have enough Energy to Attack" << std::endl;
 }
 
-void ScavTrap::guardGate(void)
+void	ScavTrap::guardGate(void)
 {
-	this->guardGate();
-	return ;
+	if (!this->getHitPoints())
+	{
+		std::cout << "ScavTrap " << this->getName() << " He's deid!" << std::endl;
+		return ;
+	}
+	std::cout << "ScavTrap " << this->getName() << " is now in Gate keeper mode" << std::endl;
 }
