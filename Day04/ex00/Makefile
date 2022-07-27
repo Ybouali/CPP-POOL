@@ -1,7 +1,9 @@
-NAME = ClapTrap
+NAME = Animal
 
 SRCS = ./Animal.cpp \
-	   ./main.cpp
+	   ./main.cpp \
+	   ./Cat.cpp \
+	   ./Dog.cpp \
 
 OBJS	= 	$(SRCS:.cpp=.o)
 

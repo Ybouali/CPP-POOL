@@ -8,6 +8,7 @@ Animal::Animal(std::string type)
 
 Animal::Animal(void)
 {
+    this->type = "animal";
     return ;
 }
 Animal::~Animal()
@@ -15,18 +16,23 @@ Animal::~Animal()
     return ;
 }
 
-Animal& Animal::operator=(Animal &other)
+Animal& Animal::operator=(const Animal &other)
 {
     this->type = other.type;
     return *this;
 }
 
-Animal::Animal(Animal *other)
+Animal::Animal(const Animal & other)
 {
     *this = other;
 }
 
-std::string Animal::getType()
+
+const std::string& Animal::getType() const
 {
     return this->type;
+}
+void Animal::makeSound()  const
+{
+    std::cout << "Animal : Animal make a sound --------" << std::endl;
 }

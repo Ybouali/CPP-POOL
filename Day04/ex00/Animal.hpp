@@ -11,10 +11,11 @@ class Animal
         Animal(std::string type);
         Animal(void);
         ~Animal();
-        Animal& operator=(Animal &other);
-        Animal(Animal *other);
+        Animal& operator=(const Animal & other);
+        Animal(const Animal & other);
 
-        std::string getType();
+        const std::string& getType() const;
+        virtual void makeSound() const;
 };
 
 #endif
