@@ -4,12 +4,14 @@ Cat::Cat()
 {
     std::cout << "Cat Default constructor called" << std::endl;
     this->type = "Cat";
+    this->myBrain = new Brain();
     return ;
 }
 
 Cat::~Cat()
 {
     std::cout << "Cat destructor called" << std::endl;
+    delete this->myBrain;
     return;
 }
 
@@ -22,6 +24,7 @@ Cat::Cat(const Cat & other)
 Cat &Cat::operator=(const Cat & other)
 {
     this->type = other.type;
+    *(this->myBrain) = *(other.myBrain);
     return *this;
 }
 

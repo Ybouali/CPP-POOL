@@ -2,7 +2,7 @@ NAME = Animal
 
 SRCS = ./Animal.cpp \
 	   ./main.cpp \
-	   ./WrongCat.cpp \
+	   ./Brain.cpp \
 	   ./Cat.cpp \
 	   ./Dog.cpp \
 

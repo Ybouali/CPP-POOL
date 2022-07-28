@@ -4,12 +4,14 @@ Dog::Dog(void)
 {
     std::cout << "Dog Default constructor called" << std::endl;
     this->type = "Dog";
+    this->myBrain = new Brain();
     return ;
 }
 
 Dog::~Dog()
 {
     std::cout << "Dog destructor called" << std::endl;
+    delete this->myBrain;
     return;
 }
 
