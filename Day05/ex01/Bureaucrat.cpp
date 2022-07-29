@@ -65,3 +65,23 @@ std::ostream&	operator << (std::ostream& os, const Bureaucrat& other)
 	os << other.getName() << ", bureaucrat grade " << other.getGrade() << ".";
 	return (os);
 }
+
+void Bureaucrat::signForm(Form& form)
+{
+	if (this->grade <= form.getReqSign())
+	{
+		form.beSigned(*this);
+		std::cout << this->name
+				  << " signed "
+				  << form.getName()
+				  << std::endl;
+	}
+	else
+	{
+		std::cout << this->name 
+				  << " couldn’t sign "
+				  << form.getName()
+				  << " because he’s grade is low"
+				  << std::endl;
+	}
+}

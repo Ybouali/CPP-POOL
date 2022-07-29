@@ -6,6 +6,16 @@ Bureaucrat::Bureaucrat(): name("Bureaucrat_default"), grade(150)
     return ;
 }
 
+void Bureaucrat::executeForm(const Form& form) const
+{
+	if (form.getIsSign() == false)
+		std::cout << this->name << " needs to sign the form first !" << std::endl;
+	else if (this->grade > form.getReqExec())
+		std::cout << this->name << " can't execute the form because he's grade is low ." << std::endl;
+	else
+		form.execute(*this);
+}
+
 Bureaucrat::Bureaucrat(const std::string &name, const int grade): name(name)
 {
     if (grade < 1)
@@ -64,4 +74,24 @@ std::ostream&	operator << (std::ostream& os, const Bureaucrat& other)
 {
 	os << other.getName() << ", bureaucrat grade " << other.getGrade() << ".";
 	return (os);
+}
+
+void Bureaucrat::signForm(Form& form)
+{
+	if (this->grade <= form.getReqSign())
+	{
+		form.beSigned(*this);
+		std::cout << this->name
+				  << " signed "
+				  << form.getName()
+				  << std::endl;
+	}
+	else
+	{
+		std::cout << this->name 
+				  << " couldn’t sign "
+				  << form.getName()
+				  << " because he’s grade is low"
+				  << std::endl;
+	}
 }
