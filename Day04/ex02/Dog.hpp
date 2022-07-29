@@ -1,7 +1,6 @@
 #ifndef DOG_HPP
 #define DOG_HPP
 
-#include "./Brain.hpp"
 #include "./AAnimal.hpp"
 
 class Dog : public AAnimal

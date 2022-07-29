@@ -1,7 +1,6 @@
 #ifndef CAT_HPP
 #define CAT_HPP
 
-#include "./Brain.hpp"
 #include "./AAnimal.hpp"
 
 class Cat : public AAnimal

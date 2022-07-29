@@ -1,10 +1,10 @@
 NAME = Animal
 
-SRCS = ./AAnimal.cpp \
-	   ./main.cpp \
+SRCS = ./main.cpp \
 	   ./Brain.cpp \
 	   ./Cat.cpp \
 	   ./Dog.cpp \
+	   ./AAnimal.cpp \
 
 OBJS	= 	$(SRCS:.cpp=.o)
 
