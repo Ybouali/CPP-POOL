@@ -1,4 +1,5 @@
 *.o
 .DS_Store
 .vscode
-Day06
+Day06/ex01
+Day06/ex02
